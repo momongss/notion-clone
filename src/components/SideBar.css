@@ -1,0 +1,44 @@
+.SideBar {
+  background-color: pink;
+
+  width: 240px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.utils {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmarks {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmarks .logo {
+  font-size: 14px;
+}
+
+.bookmarks > .list {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.list > .item {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.item > * {
+  display: flex;
+  flex-direction: row;
+}
