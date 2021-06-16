@@ -1,28 +1,91 @@
 .SideBar {
-  background-color: pink;
+  box-sizing: border-box;
 
   width: 240px;
   height: 100%;
 
   display: flex;
   flex-direction: column;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: rgb(175, 177, 178);
+  background-color: rgb(55, 60, 63);
+
+  padding: 0 14px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+
+  height: 45px;
+
+  color: rgb(229, 230, 230);
+
+  align-items: center;
+}
+
+.user-info .user-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 22px;
+  height: 22px;
+
+  margin-right: 8px;
+}
+
+.user-icon-wrapper img {
+  width: 17.75px;
+
+  border-radius: 3px;
 }
 
 .utils {
   display: flex;
   flex-direction: column;
+
+  padding-bottom: 8px;
 }
 
-.bookmarks {
+.utils > * {
+  display: flex;
+  align-items: center;
+
+  height: 23px;
+  padding: 2px 0;
+}
+
+.docs {
+  padding: 14px 0 2px 0;
+}
+
+.docs-section {
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 20px;
 }
 
-.bookmarks .logo {
-  font-size: 14px;
+.docs-section .logo {
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 1px;
+  font-size: 11.5px;
+  font-weight: 600;
 }
 
-.bookmarks > .list {
+.docs-section .logo > * {
+  cursor: pointer;
+}
+
+.docs-section > .list {
   display: flex;
   flex-direction: column;
 
@@ -34,11 +97,64 @@
   flex-direction: row;
 
   justify-content: space-between;
+  align-items: center;
 
   width: 100%;
+  height: 27px;
+
+  cursor: pointer;
 }
 
-.item > * {
+.item:hover {
+  background-color: rgb(71, 76, 80);
+}
+
+.item .item-main {
   display: flex;
   flex-direction: row;
+
+  align-items: center;
+}
+
+.item-main .toggle-btn {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-main .title {
+  height: 20.8px;
+}
+
+.item .item-hover {
+  display: flex;
+  flex-direction: row;
+
+  visibility: hidden;
+}
+
+.item:hover .item-hover {
+  visibility: visible;
+}
+
+.item-hover .more-btn {
+  display: flex;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+
+  font-size: 17px;
+}
+
+.item-hover .add-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+
+  font-size: 20px;
 }
