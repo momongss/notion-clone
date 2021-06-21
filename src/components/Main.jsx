@@ -1,17 +1,19 @@
 import "./Main.css";
 import { useState, createRef } from "react";
 
-function Main() {
+import { api } from "../utils/api.js";
+
+import { connect } from "react-redux";
+
+function Main(props) {
+  console.log(props);
   const [contentRef, setContentRef] = useState(() => createRef());
 
   return (
     <div className="Main">
       <div className="title-wrapper">
         <div className="icon-wrapper">
-          <img
-            src="https://notion-emojis.s3-us-west-2.amazonaws.com/v0/svg-twitter/1f4dd.svg"
-            alt=""
-          />
+          {props.currentArticle ? props.currentArticle.icon : ""}
         </div>
         <div className="controls"></div>
         <div className="title">
@@ -24,13 +26,26 @@ function Main() {
               }
             }}
           >
-            메모
+            {props.currentArticle ? props.currentArticle.title : ""}
           </span>
         </div>
       </div>
-      <div className="content-wrapper" contentEditable ref={contentRef}></div>
+      <div className="content-wrapper" contentEditable ref={contentRef}>
+        {props.currentArticle ? props.currentArticle.content : ""}
+      </div>
     </div>
   );
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    articleList: state.articleList,
+    currentArticle: state.currentArticle,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -4,20 +4,21 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import { Provider } from "react-redux";
+import store from "./redux/store.js";
+
 const $fontawsome = document.createElement("script");
 $fontawsome.src = "https://kit.fontawesome.com/2fda1b0923.js";
 $fontawsome.crossorigin = "anonymous";
 
-console.log($fontawsome);
-
 document.querySelector("head").appendChild($fontawsome);
 
-console.log(document.querySelector("head"));
-
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 

@@ -16,6 +16,11 @@
   padding: 0 14px;
 }
 
+.SideBar ul {
+  padding: 0;
+  margin: 0;
+}
+
 .user-info {
   display: flex;
   flex-direction: row;

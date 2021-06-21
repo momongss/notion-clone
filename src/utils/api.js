@@ -1,6 +1,18 @@
+import { backEnd } from "./backEndDemo.js";
+
 class Api {
-  constructor() {
-    //
+  constructor() {}
+
+  async getRootChildren() {
+    return await backEnd.getRootChildren();
+  }
+
+  async getNodeChildren(nodeId) {
+    return await backEnd.getNodeChildren(nodeId);
+  }
+
+  async getNodeContent(nodeId) {
+    return await backEnd.getNodeContent(nodeId);
   }
 
   getSubTree(treeId) {
